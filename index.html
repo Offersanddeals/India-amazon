@@ -1,1 +1,716 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Curated electronics deals for Indian and international shoppers. Compare useful gadgets and shop through official Amazon India affiliate links." />
+  <title>Global Tech Picks | Electronics Deals for India</title>
 
+  <style>
+    :root {
+      --bg: #07111f;
+      --bg-soft: #0d1b2f;
+      --card: rgba(255, 255, 255, .075);
+      --card-strong: rgba(255, 255, 255, .11);
+      --text: #f8fafc;
+      --muted: #aeb8c7;
+      --line: rgba(255, 255, 255, .13);
+      --accent: #22d3ee;
+      --accent-2: #a78bfa;
+      --accent-3: #facc15;
+      --success: #34d399;
+      --danger: #fb7185;
+      --shadow: 0 24px 70px rgba(0, 0, 0, .38);
+      --radius: 24px;
+    }
+
+    * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+      background:
+        radial-gradient(900px 520px at 10% -10%, rgba(34, 211, 238, .25), transparent 62%),
+        radial-gradient(850px 560px at 90% 5%, rgba(167, 139, 250, .23), transparent 58%),
+        radial-gradient(750px 500px at 50% 100%, rgba(250, 204, 21, .09), transparent 60%),
+        var(--bg);
+      color: var(--text);
+      line-height: 1.55;
+      overflow-x: hidden;
+    }
+
+    a { color: inherit; }
+
+    .nav-wrap {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: rgba(7, 17, 31, .78);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .nav {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 14px 18px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+      min-width: 215px;
+    }
+
+    .logo {
+      width: 44px;
+      height: 44px;
+      border-radius: 16px;
+      display: grid;
+      place-items: center;
+      color: #06101e;
+      font-weight: 950;
+      background: linear-gradient(135deg, var(--accent), var(--accent-3));
+      box-shadow: 0 12px 30px rgba(34, 211, 238, .2);
+    }
+
+    .brand-title {
+      display: block;
+      font-size: 15px;
+      font-weight: 950;
+      letter-spacing: -.2px;
+    }
+
+    .brand-subtitle {
+      display: block;
+      color: var(--muted);
+      font-size: 11.5px;
+      font-weight: 750;
+      margin-top: 2px;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 9px;
+    }
+
+    .nav-btn {
+      border: 1px solid var(--line);
+      background: rgba(255, 255, 255, .055);
+      color: var(--text);
+      text-decoration: none;
+      padding: 10px 13px;
+      border-radius: 999px;
+      font-size: 13px;
+      font-weight: 850;
+      cursor: pointer;
+      transition: .18s ease;
+    }
+
+    .nav-btn:hover,
+    .nav-btn.active {
+      background: rgba(34, 211, 238, .16);
+      border-color: rgba(34, 211, 238, .45);
+      transform: translateY(-1px);
+    }
+
+    .hamburger {
+      display: none;
+      width: 43px;
+      height: 43px;
+      border-radius: 14px;
+      border: 1px solid var(--line);
+      background: rgba(255, 255, 255, .06);
+      color: var(--text);
+      font-size: 20px;
+      cursor: pointer;
+    }
+
+    .mobile-menu {
+      display: none;
+      position: absolute;
+      right: 18px;
+      top: 70px;
+      width: min(330px, calc(100vw - 36px));
+      padding: 12px;
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      background: rgba(13, 27, 47, .96);
+      box-shadow: var(--shadow);
+    }
+
+    .mobile-menu.open { display: grid; gap: 10px; }
+
+    .container {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 26px 18px 60px;
+    }
+
+    .hero {
+      padding: 36px 0 20px;
+      display: grid;
+      grid-template-columns: 1.15fr .85fr;
+      gap: 22px;
+      align-items: center;
+    }
+
+    .eyebrow {
+      width: fit-content;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 8px 13px;
+      border: 1px solid rgba(52, 211, 153, .35);
+      background: rgba(52, 211, 153, .10);
+      color: #d1fae5;
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 900;
+      margin-bottom: 16px;
+    }
+
+    .dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 99px;
+      background: var(--success);
+      box-shadow: 0 0 16px rgba(52, 211, 153, .9);
+      animation: pulse 1.8s infinite ease-in-out;
+    }
+
+    @keyframes pulse {
+      50% { transform: scale(1.38); opacity: .55; }
+    }
+
+    h1 {
+      margin: 0;
+      max-width: 800px;
+      font-size: clamp(34px, 7vw, 72px);
+      line-height: .96;
+      letter-spacing: -2.7px;
+    }
+
+    .gradient-text {
+      background: linear-gradient(90deg, #67e8f9, #c4b5fd, #fde68a);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .sub {
+      max-width: 720px;
+      margin: 18px 0 0;
+      color: var(--muted);
+      font-size: 16px;
+      font-weight: 650;
+    }
+
+    .hero-panel {
+      border: 1px solid var(--line);
+      background: linear-gradient(180deg, rgba(255, 255, 255, .12), rgba(255, 255, 255, .045));
+      border-radius: 30px;
+      padding: 22px;
+      box-shadow: var(--shadow);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-panel::before {
+      content: "";
+      position: absolute;
+      inset: -50% auto auto -15%;
+      width: 230px;
+      height: 230px;
+      border-radius: 50%;
+      background: rgba(34, 211, 238, .20);
+      filter: blur(12px);
+    }
+
+    .metric-grid {
+      display: grid;
+      gap: 12px;
+      position: relative;
+    }
+
+    .metric {
+      border: 1px solid rgba(255, 255, 255, .12);
+      background: rgba(255, 255, 255, .06);
+      border-radius: 20px;
+      padding: 16px;
+    }
+
+    .metric strong { display: block; font-size: 22px; }
+    .metric span { color: var(--muted); font-size: 12.5px; font-weight: 750; }
+
+    .tools {
+      margin: 20px 0 22px;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 12px;
+      align-items: center;
+      border: 1px solid var(--line);
+      background: rgba(255, 255, 255, .06);
+      padding: 12px;
+      border-radius: 20px;
+      box-shadow: var(--shadow);
+    }
+
+    .search-input {
+      width: 100%;
+      min-height: 48px;
+      border-radius: 16px;
+      border: 1px solid rgba(255, 255, 255, .13);
+      background: rgba(255, 255, 255, .08);
+      color: var(--text);
+      padding: 0 16px;
+      font-size: 14px;
+      font-weight: 800;
+      outline: none;
+    }
+
+    .search-input::placeholder { color: rgba(248, 250, 252, .55); }
+    .search-input:focus { border-color: rgba(34, 211, 238, .55); box-shadow: 0 0 0 4px rgba(34, 211, 238, .11); }
+
+    .chip-row { display: flex; gap: 9px; flex-wrap: wrap; justify-content: flex-end; }
+
+    .chip {
+      min-height: 42px;
+      padding: 0 14px;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      background: rgba(255, 255, 255, .055);
+      color: var(--text);
+      font-weight: 900;
+      cursor: pointer;
+    }
+
+    .chip.active {
+      background: rgba(250, 204, 21, .14);
+      border-color: rgba(250, 204, 21, .42);
+    }
+
+    .section-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: end;
+      gap: 16px;
+      margin: 8px 0 16px;
+    }
+
+    .section-title { margin: 0; font-size: 24px; letter-spacing: -.5px; }
+    .section-note { margin: 5px 0 0; color: var(--muted); font-size: 13.5px; font-weight: 700; }
+    .count { color: var(--accent); font-size: 13px; font-weight: 950; }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .card {
+      border: 1px solid var(--line);
+      background: linear-gradient(180deg, var(--card-strong), rgba(255, 255, 255, .045));
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      transition: transform .2s ease, border-color .2s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-4px);
+      border-color: rgba(34, 211, 238, .38);
+    }
+
+    .product-media {
+      min-height: 280px;
+      display: grid;
+      place-items: center;
+      background:
+        linear-gradient(135deg, rgba(34, 211, 238, .12), rgba(167, 139, 250, .12)),
+        #0d1b2f;
+      border-bottom: 1px solid var(--line);
+      padding: 18px;
+    }
+
+    .product-media img {
+      width: min(100%, 390px);
+      aspect-ratio: 1 / 1;
+      object-fit: contain;
+      border-radius: 20px;
+      background: rgba(255, 255, 255, .04);
+    }
+
+    .product-body { padding: 18px; }
+
+    .tag-row { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 12px; }
+
+    .tag {
+      padding: 6px 9px;
+      border-radius: 999px;
+      font-size: 11px;
+      font-weight: 950;
+      color: #ecfeff;
+      background: rgba(34, 211, 238, .12);
+      border: 1px solid rgba(34, 211, 238, .26);
+    }
+
+    .product-title {
+      margin: 0;
+      font-size: 20px;
+      line-height: 1.18;
+      letter-spacing: -.45px;
+    }
+
+    .product-desc {
+      margin: 10px 0 0;
+      color: var(--muted);
+      font-weight: 650;
+      font-size: 14px;
+    }
+
+    .feature-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin-top: 16px;
+    }
+
+    .feature-box {
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      padding: 13px;
+      background: rgba(255, 255, 255, .045);
+    }
+
+    .feature-box.problem { border-color: rgba(251, 113, 133, .24); background: rgba(251, 113, 133, .065); }
+    .feature-box.solution { border-color: rgba(52, 211, 153, .24); background: rgba(52, 211, 153, .075); }
+
+    .feature-box h3 {
+      margin: 0 0 9px;
+      font-size: 13px;
+      letter-spacing: .1px;
+    }
+
+    .feature-box ul {
+      margin: 0;
+      padding-left: 18px;
+      color: #dbeafe;
+      font-size: 12.8px;
+      font-weight: 700;
+    }
+
+    .feature-box li + li { margin-top: 7px; }
+
+    .buy-box {
+      margin-top: 16px;
+      border: 1px solid rgba(255, 255, 255, .13);
+      background: rgba(255, 255, 255, .055);
+      border-radius: 18px;
+      padding: 14px;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 12px;
+      align-items: center;
+    }
+
+    .price-label { color: var(--muted); font-size: 12px; font-weight: 850; }
+    .price { display: block; font-size: 24px; font-weight: 1000; letter-spacing: -.4px; }
+    .price small { color: var(--muted); font-size: 11px; font-weight: 750; }
+
+    .btn-buy {
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      gap: 8px;
+      min-height: 48px;
+      padding: 0 18px;
+      border-radius: 16px;
+      text-decoration: none;
+      color: #06101e;
+      background: linear-gradient(135deg, var(--accent), var(--accent-3));
+      font-weight: 1000;
+      box-shadow: 0 12px 30px rgba(34, 211, 238, .18);
+      transition: transform .18s ease, filter .18s ease;
+      white-space: nowrap;
+    }
+
+    .btn-buy:hover { transform: translateY(-2px); filter: brightness(1.05); }
+
+    .trust-panel {
+      margin-top: 24px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+    }
+
+    .trust-card {
+      border: 1px solid var(--line);
+      background: rgba(255, 255, 255, .055);
+      border-radius: 20px;
+      padding: 16px;
+    }
+
+    .trust-card strong { display: block; margin-bottom: 5px; }
+    .trust-card span { color: var(--muted); font-size: 13px; font-weight: 700; }
+
+    footer {
+      margin-top: 28px;
+      padding-top: 18px;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 12.5px;
+      font-weight: 650;
+    }
+
+    .hidden { display: none !important; }
+
+    @media (max-width: 880px) {
+      .hero, .grid { grid-template-columns: 1fr; }
+      .hero-panel { order: -1; }
+      .tools { grid-template-columns: 1fr; }
+      .chip-row { justify-content: flex-start; }
+      .trust-panel { grid-template-columns: 1fr; }
+    }
+
+    @media (max-width: 720px) {
+      .nav-links { display: none; }
+      .hamburger { display: block; }
+      .brand { min-width: auto; }
+      .feature-grid, .buy-box { grid-template-columns: 1fr; }
+      .btn-buy { width: 100%; }
+      h1 { letter-spacing: -1.6px; }
+    }
+  </style>
+</head>
+<body>
+  <header class="nav-wrap">
+    <nav class="nav" aria-label="Main navigation">
+      <a class="brand" href="#home" aria-label="Global Tech Picks home">
+        <div class="logo">GT</div>
+        <div>
+          <span class="brand-title">Global Tech Picks</span>
+          <span class="brand-subtitle">Electronics deals for India & worldwide shoppers</span>
+        </div>
+      </a>
+
+      <div class="nav-links">
+        <a class="nav-btn active" href="#home">Home</a>
+        <a class="nav-btn" href="#products">Electronics</a>
+        <a class="nav-btn" href="https://www.instagram.com/beauty_personal_care_co/" target="_blank" rel="noopener noreferrer">Instagram</a>
+      </div>
+
+      <button class="hamburger" id="hamburgerBtn" type="button" aria-label="Open mobile menu" aria-expanded="false">☰</button>
+      <div class="mobile-menu" id="mobileMenu">
+        <a class="nav-btn active" href="#home">Home</a>
+        <a class="nav-btn" href="#products">Electronics</a>
+        <a class="nav-btn" href="https://www.instagram.com/beauty_personal_care_co/" target="_blank" rel="noopener noreferrer">Instagram</a>
+      </div>
+    </nav>
+  </header>
+
+  <main id="home" class="container">
+    <section class="hero">
+      <div>
+        <div class="eyebrow"><span class="dot"></span> Amazon India focused affiliate picks</div>
+        <h1>Smart electronics for <span class="gradient-text">Indian shoppers</span> and global tech lovers.</h1>
+        <p class="sub">
+          A clean, English-first electronics page built for Instagram traffic, affiliate conversion, and mobile users. Replace the button URLs with your real Amazon India Associates links before publishing.
+        </p>
+      </div>
+
+      <aside class="hero-panel" aria-label="Website highlights">
+        <div class="metric-grid">
+          <div class="metric"><strong>2</strong><span>Focused electronics products only</span></div>
+          <div class="metric"><strong>₹</strong><span>India-ready pricing layout</span></div>
+          <div class="metric"><strong>Mobile-first</strong><span>Optimized for Instagram bio traffic</span></div>
+        </div>
+      </aside>
+    </section>
+
+    <section class="tools" aria-label="Product tools">
+      <input id="productSearch" class="search-input" type="search" placeholder="Search electronics, earbuds, smart ring, phone mount..." autocomplete="off" />
+      <div class="chip-row" aria-label="Product filters">
+        <button class="chip active" type="button" data-filter="all">All</button>
+        <button class="chip" type="button" data-filter="wearables">Wearables</button>
+        <button class="chip" type="button" data-filter="mobile-accessories">Mobile Accessories</button>
+      </div>
+    </section>
+
+    <section id="products" aria-label="Electronics products">
+      <div class="section-head">
+        <div>
+          <h2 class="section-title">Featured Electronics</h2>
+          <p class="section-note">Only two products, positioned clearly for an Indian and international audience.</p>
+        </div>
+        <div id="productCount" class="count">Showing 2 products</div>
+      </div>
+
+      <div class="grid" id="productGrid">
+        <article class="card" data-category="wearables" data-search="smart ring health sleep fitness tracker wearable android iphone ip68">
+          <div class="product-media">
+            <img src="images/Insta_post_96.png" alt="Smart Ring health and sleep tracker" />
+          </div>
+          <div class="product-body">
+            <div class="tag-row">
+              <span class="tag">Wearable Tech</span>
+              <span class="tag">Health Tracking</span>
+              <span class="tag">IP68</span>
+            </div>
+            <h2 class="product-title">Smart Ring Health & Sleep Tracker</h2>
+            <p class="product-desc">
+              A compact wearable for users who want health, sleep, and activity insights without wearing a bulky smartwatch every day.
+            </p>
+
+            <div class="feature-grid">
+              <div class="feature-box problem">
+                <h3>Common Problems</h3>
+                <ul>
+                  <li>Smartwatches can feel bulky during sleep.</li>
+                  <li>Daily wellness tracking is often difficult to maintain.</li>
+                  <li>Many trackers are not discreet enough for office or travel use.</li>
+                </ul>
+              </div>
+              <div class="feature-box solution">
+                <h3>Why It Helps</h3>
+                <ul>
+                  <li>Lightweight ring-style design for daily wear.</li>
+                  <li>Tracks sleep, activity, and wellness indicators.</li>
+                  <li>Works with Android and iPhone for flexible usage.</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="buy-box">
+              <div>
+                <span class="price-label">Estimated price</span>
+                <span class="price">₹4,000–₹8,000 <small>*check live price</small></span>
+              </div>
+              <a class="btn-buy" href="YOUR_AMAZON_INDIA_AFFILIATE_LINK_HERE" target="_blank" rel="nofollow sponsored noopener noreferrer">Buy on Amazon India →</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="card" data-category="mobile-accessories" data-search="car phone holder magnetic mount magsafe suction cup smartphone accessory iphone android">
+          <div class="product-media">
+            <img src="images/Insta_post_95.png" alt="Magnetic car phone holder for smartphone" />
+          </div>
+          <div class="product-body">
+            <div class="tag-row">
+              <span class="tag">Mobile Accessory</span>
+              <span class="tag">Car Gadget</span>
+              <span class="tag">Magnetic Mount</span>
+            </div>
+            <h2 class="product-title">Magnetic Car Phone Holder</h2>
+            <p class="product-desc">
+              A practical car accessory for safer navigation, hands-free viewing, and stable phone placement while driving.
+            </p>
+
+            <div class="feature-grid">
+              <div class="feature-box problem">
+                <h3>Common Problems</h3>
+                <ul>
+                  <li>Phones slip or fall during sudden bumps.</li>
+                  <li>Navigation becomes uncomfortable without a stable mount.</li>
+                  <li>Weak holders make one-hand use difficult.</li>
+                </ul>
+              </div>
+              <div class="feature-box solution">
+                <h3>Why It Helps</h3>
+                <ul>
+                  <li>Magnetic hold keeps the phone steady.</li>
+                  <li>Adjustable angle helps with map visibility.</li>
+                  <li>Useful for iPhone and Android users.</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="buy-box">
+              <div>
+                <span class="price-label">Estimated price</span>
+                <span class="price">₹500–₹1,500 <small>*check live price</small></span>
+              </div>
+              <a class="btn-buy" href="YOUR_AMAZON_INDIA_AFFILIATE_LINK_HERE" target="_blank" rel="nofollow sponsored noopener noreferrer">Buy on Amazon India →</a>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="trust-panel" aria-label="Trust information">
+      <div class="trust-card"><strong>Affiliate Disclosure</strong><span>Some links may be affiliate links. You may earn a commission at no extra cost to the buyer.</span></div>
+      <div class="trust-card"><strong>India Focused</strong><span>Designed for Amazon India links, INR pricing, and Indian Instagram audiences.</span></div>
+      <div class="trust-card"><strong>Price Reminder</strong><span>Prices and availability change frequently. Always verify on Amazon before buying.</span></div>
+    </section>
+
+    <footer>
+      © <span id="year"></span> Global Tech Picks. Product names, images, prices, and availability should be verified before publishing. Replace placeholder links with your official Amazon India Associates URLs.
+    </footer>
+  </main>
+
+  <script>
+    const hamburgerBtn = document.getElementById('hamburgerBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    const searchInput = document.getElementById('productSearch');
+    const chips = document.querySelectorAll('.chip');
+    const cards = document.querySelectorAll('.card');
+    const count = document.getElementById('productCount');
+    const year = document.getElementById('year');
+
+    year.textContent = new Date().getFullYear();
+
+    hamburgerBtn.addEventListener('click', () => {
+      const isOpen = mobileMenu.classList.toggle('open');
+      hamburgerBtn.setAttribute('aria-expanded', String(isOpen));
+    });
+
+    document.querySelectorAll('.mobile-menu a').forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.remove('open');
+        hamburgerBtn.setAttribute('aria-expanded', 'false');
+      });
+    });
+
+    let activeFilter = 'all';
+
+    function updateProducts() {
+      const term = searchInput.value.trim().toLowerCase();
+      let visible = 0;
+
+      cards.forEach(card => {
+        const category = card.dataset.category;
+        const search = card.dataset.search.toLowerCase();
+        const matchesFilter = activeFilter === 'all' || category === activeFilter;
+        const matchesSearch = !term || search.includes(term) || card.innerText.toLowerCase().includes(term);
+        const show = matchesFilter && matchesSearch;
+
+        card.classList.toggle('hidden', !show);
+        if (show) visible++;
+      });
+
+      count.textContent = `Showing ${visible} product${visible === 1 ? '' : 's'}`;
+    }
+
+    chips.forEach(chip => {
+      chip.addEventListener('click', () => {
+        chips.forEach(item => item.classList.remove('active'));
+        chip.classList.add('active');
+        activeFilter = chip.dataset.filter;
+        updateProducts();
+      });
+    });
+
+    searchInput.addEventListener('input', updateProducts);
+    updateProducts();
+  </script>
+</body>
+</html>
